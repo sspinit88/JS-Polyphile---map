@@ -1,4 +1,5 @@
 export function myMapPolyphile() {
+  
   if (!Array.prototype.myMap) {
     Array.prototype.myMap = function (callback) {
       /// проверка на массивоподобную сущность
@@ -7,7 +8,7 @@ export function myMapPolyphile() {
         !(
           this instanceof Array ||
           this instanceof String ||
-          // this instanceof string
+          typeof this === 'string'
         )
       ) {
         throw new TypeError(
