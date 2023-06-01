@@ -2,9 +2,17 @@ export function myMapPolyphile() {
   if (!Array.prototype.myMap) {
     Array.prototype.myMap = function (callback) {
       /// проверка на массивоподобную сущность
-      console.log(this);
-      if (!(this instanceof Array || this instanceof String)) {
-        throw new TypeError(`Array.prototype.myMap was called on wrong type`);
+      console.log(2, this instanceof String);
+      if (
+        !(
+          this instanceof Array ||
+          this instanceof String ||
+          // this instanceof string
+        )
+      ) {
+        throw new TypeError(
+          `Array.prototype.myMap was called on wrong type ${typeof this}`
+        );
       }
 
       /// проверка на отстутствие колбека
