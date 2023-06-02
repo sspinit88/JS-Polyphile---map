@@ -1,9 +1,7 @@
 export function myMapPolyphile() {
-  
   if (!Array.prototype.myMap) {
     Array.prototype.myMap = function (callback) {
       /// проверка на массивоподобную сущность
-      console.log(2, this instanceof String);
       if (
         !(
           this instanceof Array ||
